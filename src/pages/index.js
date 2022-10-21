@@ -157,7 +157,7 @@ const IndexPage = ({ data }) => {
       desc: 'Python program that takes in the size of a crossword puzzle, the number of blocking squares, and a word list and outputs an American style crossword puzzle. Built for my Artificial Intelligence class to help students visualize their crossword puzzle outputs. \
       To display the GUI, tkinter was used. To generate the crossword, the python program used constraint satisfaction to generate crossword puzzles efficiently.',
       note: 'Unfortunately, due to Honor Code violations, code for crossword generation is not public. However, the code for the GUI is available and found in the link below. Instructions for running the program with your own crossword generator are also provided in the link below.',
-      github: 'https://github.com/superandybean/personal-site/tree/master/src/program_code/',
+      github: 'https://github.com/superandybean/personal-site/tree/master/static/program_code',
     },
     {
       name: 'College Management System',
@@ -174,7 +174,7 @@ const IndexPage = ({ data }) => {
       desc: 'Taking in a sudoku puzzle input of any NxN (minimum 9, maximum 16) size, the program will output a solved sudoku puzzle based on the input(unless the puzzle is not possible, which will cause the program to output that the puzzle is not possible. \
       The GUI was built with tkinter in Python and the solver used Python with constraint satisfaction and forward looking to efficiently solve sudoku puzzles. The program was built as a helpful addon for students for the Sudoku solving assingment in my Artificial Intelligence class.',
       note: 'Unfortunately, due to Honor Code violations, code for sudoku solving is not public. However, the code for the GUI is available and found in the link below. Instructions for running the program with your own sudoku solver are also provided in the link below.',
-      github: 'https://github.com/superandybean/personal-site/tree/master/src/program_code/',
+      github: 'https://github.com/superandybean/personal-site/tree/master/static/program_code',
     },
     {
       name: 'Tetris',
