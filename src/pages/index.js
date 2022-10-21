@@ -9,62 +9,14 @@ import { Global, css } from '@emotion/react'
 import { BiLinkExternal } from 'react-icons/bi'
 import { AiOutlineLink, AiFillGithub } from "react-icons/ai";
 import { scroller } from 'react-scroll'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { useInView } from 'react-intersection-observer'
 
 import { barAnimation, wiperAnimation, wiperLeftAnimation, showPageContent, headerAnimation, fadeInUp, staggerAnimation } from '../animation/animations'
 import ContentCard from '../components/card'
-
-const HeaderLink = ({ children, ...props }) => (
-  <Box
-    {...props}
-    sx={{
-      mx: [2, 4, null],
-      fontSize: [2, 3, null],
-    }}
-  >
-    {children}
-  </Box>
-)
-
-const ProjectCard = ({ img, children, ...props }) => (
-  <motion.div
-    {...props}
-    sx={{
-      width: '250px',
-      height: '250px',
-      // border: '1px solid white'
-      position: 'relative',
-      cursor: 'pointer',
-    }}
-
-    variants={fadeInUp()}
-  >
-    <GatsbyImage
-      image={getImage(img)}
-      alt={children}
-      width={200}
-      height={200}
-      sx={{
-        position: 'absolute',
-      }}
-    />
-    <Box
-      sx={{
-        position: 'absolute',
-        width: '250px',
-        color: 'white',
-        backgroundColor: 'rgba(0, 0, 0, 0.5)',
-        py: 2,
-        textAlign: 'center',
-        bottom: '0',
-        zIndex: 3,
-      }}
-    >
-      {children}
-    </Box>
-  </motion.div>
-)
+import ContactLink from '../components/contact'
+import HeaderLink from '../components/headerLink'
+import ProjectCard from '../components/projectCard'
+import SEO from '../components/seo'
 
 const IndexPage = ({ data }) => {
   const {
@@ -111,7 +63,9 @@ const IndexPage = ({ data }) => {
       name: 'Learning the Express Way',
       fullname: 'Learning the Express Way',
       img: expressImg,
-      desc: 'Learning the Express Way is a website that teaches the basics of web development and is for beginners and intermediates. It was built as a tool to help students in TJHSST\'s Web Application Development class. The website was created in the Summer of 2022 and is built with Gatsby. ',
+      desc: 'Learning the Express Way is a website that teaches the basics of web development and is for beginners and intermediates. \
+      It was built as a tool to help students in TJHSST\'s Web Application Development class. The website was created in the Summer of 2022 and is built with Gatsby. \
+      The lessons are written in Markdown and are converted to HTML using Gatsby\'s MDX plugin, allowing other users and students to easily create and add their own lessons onto the site.',
       link: 'https://lew.sites.tjhsst.edu/',
       github: 'https://github.com/superandybean/learning-the-express-way',
     },
@@ -119,14 +73,19 @@ const IndexPage = ({ data }) => {
       name: 'Dota Predictions Game',
       fullname: 'Dota Predictions Game',
       img: dotaImg,
-      desc: 'asdf',
+      desc: 'A predicting game inspired by FiveThirtyEight\'s NFL Forecasting game. On the site, users predict the outcome of professional Dota 2 matches and earn/lose points based on how confident their predictions are. \
+      A more confident correct pick earns more points than a less confident correct pick, but a confident incorrect pick loses more points than a less confident one! The site was built with Express and Handlebars, with data being stored in a MongoDB database. \
+      The site originally was built for predicting Dota matches but also supports predictions on CS:GO games.',
+      note: 'The site was originally hosted on Heroku, but is currently down due to the end of the Dota 2 season.',
       github: 'https://github.com/superandybean/prediction-game',
     },
     {
       name: 'RateMyTJ',
       fullname: 'RateMyTJ',
       img: ratemytjImg,
-      desc: 'asdf',
+      desc: 'RateMyTJ was my Senior Research project for the Mobile and Web Application Senior Research Lab. Inspired by Faculty Course Evaluations found in many colleges, the site allows students to rate their teachers and classes on different statistics such as difficult, enjoyment, and workload. \
+      It is aimed at helping students make more informed decisions when choosing classes and also aims at fixing many of the issues found on the current TJHSST course catalog. The site was built with Express and Handlebars with data being stored in a mySQL database. \
+      The site is hosted on TJHSST director and supports login with Ion authentication through OAuth.',
       link: 'https://ratemytj.sites.tjhsst.edu/',
       github: 'https://github.com/superandybean/RateMyTJ',
     },
@@ -134,7 +93,8 @@ const IndexPage = ({ data }) => {
       name: 'DPC Simulator',
       fullname: 'DPC Simulator',
       img: dotasimImg,
-      desc: 'asdf',
+      desc: 'The DPC Simulator allows users to try different scenario and \'what if\' situations in the Dota Pro Circuit. Users can simulate the DPC season by picking their winners and losers and view how each match affects the chances of each team from making the major or getting eliminated. \
+      The site was built with pure Javascript and uses the OpenDota API to get data on the teams and matches. The site is hosted on Netlify.',
       link: 'https://dpc-simulator.netlify.app/',
       github: 'https://github.com/superandybean/dpc-simulator',
     },
@@ -142,7 +102,8 @@ const IndexPage = ({ data }) => {
       name: 'TJCTF',
       fullname: 'TJCTF 2022',
       img: tjctfImg,
-      desc: 'asdf',
+      desc: 'I helped host TJCTF 2022, a CTF (capture-the-flag) competition consisting of over 1100 players and 300 teams. I designed the TJCTF webpage and wrote a few challenges for the competition. ',
+      note: 'The Github link links to the a repository to all of the problems from TJCTF 2022. My challenges are found at \'misc/cheapest-cookies-2\', \'web/game-leaderboard\', \'web/ascordle\', and \'web/portalstrology\'.',
       link: 'https://tjctf.org/',
       github: 'https://github.com/TJCSec/tjctf-2022-challenges',
     },
@@ -151,22 +112,25 @@ const IndexPage = ({ data }) => {
       fullname: 'Othello AI',
       img: othelloImg,
       awards: '🥇 2021 TJHSST Othello Tournament Winner',
-      desc: 'asdf',
+      desc: 'An AI that plays Othello (also known as Reversi) pretty well. The AI was built in Python and uses a minimax algorithm with alpha-beta pruning to search for the best move. \
+      The AI was an assignment for my artificial Intelligence class in 2021 and won the TJHSST Othello Tournament in 2021.',
+      note: 'For Honor Code Reasons, my Othello code is unfortunately not public. However, you can play against the AI in the link below and selecting on the \'🌟 T-2021 2022alam\' player.',
       link: 'https://othello.tjhsst.edu/play/',
     },
     {
       name: 'fresh',
       fullname: 'fresh',
       img: freshImg,
-      desc: 'asdf',
       awards: '⭐ HackTJ 8.0 Best Mobile App Winner',
+      desc: 'fresh is a tool that is used to autonomously record and display locations of trash found outside, providing powerful and valuable analysis tools for researchers, volunteers, and environmentalists alike. \
+      The mobile app was built with Flutter, backend with Express and MongoDB for website & API, and the frontend was built with Gatsby. The project was built for HackTJ 8.0 and won Best Mobile App.',
       github: 'https://github.com/AutinMitra/fresh-frontend',
     },
     {
       name: 'Bazaar Tracker',
       fullname: 'Bazaar Tracker',
       img: bazaarImg,
-      desc: 'asdf',
+      desc: 'A web application that uses the Hypixel API to track prices of items in the Skyblock Bazaar. The site was built with Javascript and uses Chartjs to display prices over time.',
       link: 'https://bazaar-tracker.netlify.app/',
       github: 'https://github.com/superandybean/Bazaar-Tracker',
     },
@@ -174,7 +138,7 @@ const IndexPage = ({ data }) => {
       name: 'Formula 1 Simulator',
       fullname: 'Formula 1 Simulator',
       img: f1simImg,
-      desc: 'asdf',
+      desc: 'App built using Javascript that allows users to alter and add race results to see how F1 standings would change. It features drag and drop capabilities to aid users in changing race results. ',
       link: 'https://f1-simulator.netlify.app/',
       github: 'https://github.com/superandybean/f1-simulator',
     },
@@ -182,44 +146,49 @@ const IndexPage = ({ data }) => {
       name: 'goosechase',
       fullname: 'goosechase',
       img: goosechaseImg,
-      desc: 'asdf',
+      desc: 'Inspired by Wikiraces, goosechase is a game built using Express and EJS that allows users to compete against their friends with the goal of trying to find a certain CMU page first, sort of like a wild goosechase. \
+      The game was built for HackCMU 2022 and unfortunately not all of the planned features were able to be implemented in the hackathon timeframe. The game uses SocketIO to allow for multiplayer functionality.',
       github: 'https://github.com/superandybean/goosechase',
     },
     {
       name: 'Crossword Generator',
       fullname: 'Crossword Generator',
       img: crosswordImg,
-      desc: 'asdf',
-      note: 'Due to Honor Code violations, public code is',
-      github: '',
+      desc: 'Python program that takes in the size of a crossword puzzle, the number of blocking squares, and a word list and outputs an American style crossword puzzle. Built for my Artificial Intelligence class to help students visualize their crossword puzzle outputs. \
+      To display the GUI, tkinter was used. To generate the crossword, the python program used constraint satisfaction to generate crossword puzzles efficiently.',
+      note: 'Unfortunately, due to Honor Code violations, code for crossword generation is not public. However, the code for the GUI is available and found in the link below. Instructions for running the program with your own crossword generator are also provided in the link below.',
+      github: 'https://github.com/superandybean/personal-site/tree/master/src/program_code/',
     },
     {
       name: 'College Management System',
       fullname: 'College & University Management System',
       img: cumsImg,
-      desc: 'asdf',
+      desc: 'The College & University Management System is a web application that was built for HackTJ 9.0. The site allows users to easily manage their college applications-from a calendar of deadlines to an easy way to keep track of all of their essays. \
+      The site was built with Express and Handlebars and uses the Department of Education\'s API to obtain college information including average cost and SAT score. Unfortunately, not all of the planned features were implemented.',
       github: 'https://github.com/superandybean/college-university-managment-system',
     },
     {
       name: 'Sudoku Solver',
       fullname: 'Sudoku Solver',
       img: sudokuImg,
-      desc: 'asdf',
-      github: '',
+      desc: 'Taking in a sudoku puzzle input of any NxN (minimum 9, maximum 16) size, the program will output a solved sudoku puzzle based on the input(unless the puzzle is not possible, which will cause the program to output that the puzzle is not possible. \
+      The GUI was built with tkinter in Python and the solver used Python with constraint satisfaction and forward looking to efficiently solve sudoku puzzles. The program was built as a helpful addon for students for the Sudoku solving assingment in my Artificial Intelligence class.',
+      note: 'Unfortunately, due to Honor Code violations, code for sudoku solving is not public. However, the code for the GUI is available and found in the link below. Instructions for running the program with your own sudoku solver are also provided in the link below.',
+      github: 'https://github.com/superandybean/personal-site/tree/master/src/program_code/',
     },
     {
       name: 'Tetris',
       fullname: 'Tetris',
       img: tetrisImg,
-      desc: 'asdf',
+      desc: 'Tetris was a Java application that I buit in 2019. It is just a basic game of Tetris and allows users to customize their controls and add high scores.',
       github: 'https://github.com/superandybean/tetris',
     },
     {
       name: 'focus',
       fullname: 'focus',
       img: focusImg,
-      desc: 'asdf',
       awards: '⭐ YuHacks Challenge Winner',
+      desc: 'A web application that detects user drowsiness to help prevent fatigue-related accidents. Gatsby was used for frontend visuals and Tensorflow was used for landmark detection. The app was built for YuHacks and was a Challenge Winner.',
       github: 'https://github.com/AutinMitra/focus',
     },
   ]
@@ -248,7 +217,8 @@ const IndexPage = ({ data }) => {
         flexDirection: 'column',
       }}
     >
-       <Global
+      <SEO />
+      <Global
         styles={css`
           html {
             overflow-y: scroll;
@@ -402,7 +372,7 @@ const IndexPage = ({ data }) => {
             animate='animate'
             variants={wiperLeftAnimation()}
           >
-            Expierenced programmer who loves just about anything and everything about computers.
+            Experienced programmer who loves just about anything and everything about computers.
             Currently studying Computer Science at <Themed.b>Carnegie Mellon University</Themed.b>.
           </motion.div>
         </Flex>
@@ -445,19 +415,23 @@ const IndexPage = ({ data }) => {
               about me
             </motion.div>
             <ContentCard>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat eleifend augue, eu volutpat orci tempor at. Sed laoreet nunc vel ligula mollis ullamcorper. Nam mollis condimentum dolor ac maximus. Etiam finibus, lectus nec accumsan tincidunt, justo elit convallis orci, et viverra mauris sapien ut ipsum. Sed ac pharetra odio, eu pulvinar quam. Aenean sed tellus ac diam eleifend gravida. Ut vel enim sed urna porttitor placerat nec vitae nisl. Nunc fermentum ipsum sed suscipit tincidunt. Donec augue risus, commodo in tempus non, pharetra eu lacus. Quisque malesuada mauris quis ligula facilisis suscipit. Praesent suscipit sem felis, eget egestas tortor hendrerit et. Sed accumsan metus nec nisi lacinia, dignissim ullamcorper tortor congue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+              I'm Andrew Lam, a freshman studying Computer Science at Carnegie Mellon University. My classes this semester include <Themed.a href="https://www.math.cmu.edu/~jmackey/151_128/welcome.html" target='_blank' rel='noopener noreferrer'>Mathematical Foundations in Computer Science</Themed.a> and <Themed.a href="http://www.cs.cmu.edu/~15122/" target='_blank' rel='noopener noreferrer'>Principles of Imperative Computation</Themed.a>.
+              The Computer Science topics that interest me the most currently are web development and artificial intelligence. Outside of class, I enjoy gaming and relaxing.
             </ContentCard>
             <ContentCard>
-              In ultrices eros sit amet interdum pulvinar. Donec nec augue non libero pulvinar tincidunt eget eget ipsum. Proin sapien dolor, facilisis in libero ut, lacinia mattis libero. Cras efficitur libero lorem, ac fermentum purus hendrerit bibendum. In commodo mi in nisi efficitur pretium. Quisque ut varius metus, in laoreet libero. Suspendisse non eros venenatis nunc accumsan viverra et nec nunc. Mauris non bibendum purus. Aenean elit lorem, hendrerit nec felis eget, porta lobortis metus. Quisque consectetur lectus in dapibus ornare. Aliquam venenatis felis in blandit blandit. Aenean aliquet consectetur sem auctor fermentum. Pellentesque imperdiet leo a nisl aliquam, ac euismod mi blandit. Aliquam eu tortor sit amet ligula molestie tristique quis vel massa.
+              I really enjoy helping people, and many of my projects are designed to help people with certain tasks. Over the last summer, I helped pioneer a website that taught the basics of web development for a web development class at my high school. Additionally, during my senior year, I worked on a project that improved the school's course catalog to aid students in their course selection process. Also, I volunteered as a beginning Java teacher at my local Chinese school and taught introductory Java topics to middle school students every week for a year.
             </ContentCard>
-            <ContentCard
+            <ContentCard>
+              I graduated from Thomas Jefferson High School for Science and Technology in 2022 with a 4.51 GPA. In high school, I took many advanced courses including Multivariable Calculus, Linear Algebra, AP Computer Science with Data Structures, Artificial Intelligence, Machine Learning, Advanced Math Techniques, and AP Physics C. During my senior year, I was the statisician for my school's <Themed.a href="https://tjcsec.club/" target='_blank' rel='noopener noreferrer'>Computer Security Club</Themed.a> and helped host <Themed.a href="https://tjctf.org/" target='_blank' rel='noopener noreferrer'>TJCTF</Themed.a>, a CTF consisting of over 1100 players and over 300 teams. Additionally, I marched trumpet for my school's marching band for all four years.
+            </ContentCard>
+            {/* <ContentCard
               sx={{
                 display: 'flex',
                 alignItems: 'center',
               }}
             >
               <Themed.a href="/resume.pdf" target="_blank" rel="noopener noreferrer">View my resume</Themed.a> <Themed.a href="/resume.pdf" sx={{display: 'flex', alignItems: 'center'}} target="_blank" rel="noopener noreferrer"><BiLinkExternal sx={{ml: 2}} /></Themed.a>
-            </ContentCard>
+            </ContentCard> */}
           </Flex>
         </Flex>
         <Flex
@@ -478,7 +452,7 @@ const IndexPage = ({ data }) => {
               sx={{
                 fontWeight: 'bold',
                 fontSize: 10,
-                mb: 1,
+                mb: 2,
               }}
 
               ref={refProjects}
@@ -569,7 +543,7 @@ const IndexPage = ({ data }) => {
                           mb: 3,
                         }}
                       >
-                        {project.name}
+                        {project.fullname}
                       </Box>
                       {project.awards &&
                       <Box
@@ -659,10 +633,22 @@ const IndexPage = ({ data }) => {
               contact
             </motion.div>
             <ContentCard>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat eleifend augue, eu volutpat orci tempor at. Sed laoreet nunc vel ligula mollis ullamcorper. Nam mollis condimentum dolor ac maximus. Etiam finibus, lectus nec accumsan tincidunt, justo elit convallis orci, et viverra mauris sapien ut ipsum. Sed ac pharetra odio, eu pulvinar quam. Aenean sed tellus ac diam eleifend gravida. Ut vel enim sed urna porttitor placerat nec vitae nisl. Nunc fermentum ipsum sed suscipit tincidunt. Donec augue risus, commodo in tempus non, pharetra eu lacus. Quisque malesuada mauris quis ligula facilisis suscipit. Praesent suscipit sem felis, eget egestas tortor hendrerit et. Sed accumsan metus nec nisi lacinia, dignissim ullamcorper tortor congue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+              You can contact me at <code>andyy#0002</code> on Discord or <code>andrewlamm04@gmail.com</code> through email.
             </ContentCard>
             <ContentCard>
-              In ultrices eros sit amet interdum pulvinar. Donec nec augue non libero pulvinar tincidunt eget eget ipsum. Proin sapien dolor, facilisis in libero ut, lacinia mattis libero. Cras efficitur libero lorem, ac fermentum purus hendrerit bibendum. In commodo mi in nisi efficitur pretium. Quisque ut varius metus, in laoreet libero. Suspendisse non eros venenatis nunc accumsan viverra et nec nunc. Mauris non bibendum purus. Aenean elit lorem, hendrerit nec felis eget, porta lobortis metus. Quisque consectetur lectus in dapibus ornare. Aliquam venenatis felis in blandit blandit. Aenean aliquet consectetur sem auctor fermentum. Pellentesque imperdiet leo a nisl aliquam, ac euismod mi blandit. Aliquam eu tortor sit amet ligula molestie tristique quis vel massa.
+              Some other external links are also provided below:
+              <ContactLink link="https://steamcommunity.com/id/superandybean">
+                Steam Profile
+              </ContactLink>
+              <ContactLink link="https://github.com/superandybean">
+                GitHub
+              </ContactLink>
+              <ContactLink link="https://www.youtube.com/channel/UCJtjhUA1jVhxJXDgzTT6AxA">
+                Youtube
+              </ContactLink>
+              <ContactLink link="https://www.linkedin.com/in/andrew-lam-65b2a7204/">
+                LinkedIn
+              </ContactLink>
             </ContentCard>
           </Flex>
         </Flex>
