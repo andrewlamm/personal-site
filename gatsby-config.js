@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://andrewl.dev/`,
   },
   plugins: [
     'gatsby-plugin-theme-ui',
