@@ -12,5 +12,6 @@ my [personal site](https://andrewl.dev/)
 
 ### to deploy
 
-make sure you are logged in with `firebase login`
-`firebase deploy`
+1. make sure you are logged in with `firebase login`
+2. build files with `gatsby build`
+3. finally, deploy with `firebase deploy`
