@@ -41,6 +41,7 @@ const IndexPage = ({ data }) => {
     sudoku: { childImageSharp: sudokuImg },
     tetris: { childImageSharp: tetrisImg },
     focus: { childImageSharp: focusImg },
+    csgodoku: { childImageSharp: csgodokuImg },
   } = data
 
   const scrollAbout = useCallback(() => {
@@ -68,7 +69,7 @@ const IndexPage = ({ data }) => {
     {
       name: 'CSGODOKU',
       fullname: 'CSGODOKU',
-      img: undefined,
+      img: csgodokuImg,
       desc: 'An immaculate grid game for CS:GO. Immaculate Grid is a game featuring a 3x3 board with a clue corresponding to each row and column. \
       The user\'s goal is to select a player in each grid spot such that the clue for each row and column in that grid spot is satisfied without repeating any players. \
       Data from the CS:GO players are scraped from HLTV using JavaScript and the puzzles are generated using a python script and are stored on a MongoDB database. \
@@ -95,7 +96,7 @@ const IndexPage = ({ data }) => {
       Users can log in using their Steam account on the website through the Steam OpenID library. Users can also compare their picks with other users through the leaderboard feature. Custom leaderboards are also a upcoming planned feature. \
       The site was built with Express and EJS with user data being stored in a MongoDB database. ',
       note: 'The site was originally hosted on Render, but is currently down to host my other project, CSGODOKU.',
-      github: 'https://github.com/superandybean/predictions-game',
+      github: 'https://github.com/superandybean/predictions-game-v2',
     },
     // {
     //   name: 'Dota Predictions Game',
@@ -444,16 +445,16 @@ const IndexPage = ({ data }) => {
             </motion.div>
             <ContentCard>
               I'm Andrew Lam, a sophomore studying Computer Science at Carnegie Mellon University. My classes this semester include <OutsideLink href="https://www.cs.cmu.edu/~213/">Introduction to Computer Systems</OutsideLink> and <OutsideLink href="https://www.cs.cmu.edu/~crary/317-f23/">Constructive Logic</OutsideLink>.
-              Currently, I am currently a Teaching Assistant for <OutsideLink href="http://www.cs.cmu.edu/~15150/">15-150: Principles of Functional Programming</OutsideLink>. I was also a teaching assistant for <OutsideLink href="https://www.cs.cmu.edu/~15122/">15-122: Principles of Imperative Computation</OutsideLink> last semester as well.
+              Currently, I am currently a Teaching Assistant for <OutsideLink href="http://www.cs.cmu.edu/~15150/">15-150: Principles of Functional Programming</OutsideLink>. I was also a teaching assistant for <OutsideLink href="http://www.cs.cmu.edu/~15122-archive/s23/">15-122: Principles of Imperative Computation</OutsideLink> last semester as well.
               The Computer Science topics that interest me the most currently are web development, programming languages, and computer systems. Outside of class, I enjoy gaming and relaxing.
             </ContentCard>
             <ContentCard>
               Some of the classes that I have taken include (with the semester I took them in parentheses):
               <ul>
                 <li><OutsideLink href="https://www.math.cmu.edu/~jmackey/151_128/welcome.html">Mathematical Foundations in Computer Science</OutsideLink> (Fall 2022)</li>
-                <li><OutsideLink href="https://www.cs.cmu.edu/~15122/">Principles of Imperative Computation</OutsideLink> (Fall 2022)</li>
+                <li><OutsideLink href="http://www.cs.cmu.edu/~15122-archive/f22/">Principles of Imperative Computation</OutsideLink> (Fall 2022)</li>
                 <li><OutsideLink href="http://www.cs.cmu.edu/~15150/">Principles of Functional Programming</OutsideLink> (Spring 2023)</li>
-                <li><OutsideLink href="https://www.cs.cmu.edu/~15281/">Artificial Intelligence: Representation and Problem Solving</OutsideLink> (Spring 2023)</li>
+                <li><OutsideLink href="https://www.cs.cmu.edu/~15281-s23/">Artificial Intelligence: Representation and Problem Solving</OutsideLink> (Spring 2023)</li>
                 <li><OutsideLink href="https://s23.cs251.com/">Great Ideas in Theoretical Computer Science</OutsideLink> (Spring 2023)</li>
               </ul>
             </ContentCard>
@@ -842,6 +843,16 @@ export const query = graphql`
       }
     }
     focus: file(relativePath: { eq: "focus.png" }) {
+      childImageSharp {
+        gatsbyImageData(
+          width: 250
+          height: 250
+          placeholder: BLURRED
+          formats: [AUTO, WEBP, AVIF]
+        )
+      }
+    }
+    csgodoku: file(relativePath: { eq: "csgodoku.png" }) {
       childImageSharp {
         gatsbyImageData(
           width: 250
