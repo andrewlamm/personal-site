@@ -12,32 +12,57 @@ import ContentCard from '../components/card'
 const CourseSection = ({ ...props }) => {
   const courses = [
     {
-      semester: 'fall 2022',
+      semester: 'spring 2024',
       courses: [
         {
-          number: '15-122',
-          name: 'Principles of Imperative Computation',
+          number: '15-417',
+          name: 'HOT Compilation',
+        },
+        {
+          number: '15-411',
+          name: 'Compiler Design',
           favorite: true,
         },
         {
-          number: '15-151',
-          name: 'Mathematical Foundations for Computer Science',
+          number: '15-311',
+          name: 'Logic and Mechanized Reasoning',
         },
         {
-          number: '21-241',
-          name: 'Mathematical Foundations for Computer Science',
+          number: '15-210',
+          name: 'Parallel and Sequential Data Structures and Algorithms',
         },
         {
-          number: '88-230',
-          name: 'Human Intelligence and Human Stupidity',
+          number: '36-226',
+          name: 'Introduction to Statistical Inference',
+        },
+      ]
+    },
+    {
+      semester: 'fall 2023',
+      courses: [
+        {
+          number: '15-317',
+          name: 'Constructive Logic',
         },
         {
-          number: '79-189',
-          name: 'Democracy and History: Thinking Beyond the Self',
+          number: '15-213',
+          name: 'Introduction to Computer Systems',
         },
         {
-          number: '07-128',
-          name: 'First Year Immigration Course',
+          number: '36-225',
+          name: 'Introduction to Probability Theory',
+        },
+        {
+          number: '57-173',
+          name: 'Survey of Western Music History',
+        },
+        {
+          number: '57-188',
+          name: 'Repertoire and Listening for Musicians',
+        },
+        {
+          number: '98-317',
+          name: 'Student Taught Courses (StuCo): Hype for Types',
         },
       ]
     },
@@ -73,60 +98,35 @@ const CourseSection = ({ ...props }) => {
       ]
     },
     {
-      semester: 'fall 2023',
+      semester: 'fall 2022',
       courses: [
         {
-          number: '15-317',
-          name: 'Constructive Logic',
-        },
-        {
-          number: '15-213',
-          name: 'Introduction to Computer Systems',
-        },
-        {
-          number: '36-225',
-          name: 'Introduction to Probability Theory',
-        },
-        {
-          number: '57-173',
-          name: 'Survey of Western Music History',
-        },
-        {
-          number: '57-188',
-          name: 'Repertoire and Listening for Musicians',
-        },
-        {
-          number: '98-317',
-          name: 'Student Taught Courses (StuCo): Hype for Types',
-        },
-      ]
-    },
-    {
-      semester: 'spring 2024',
-      courses: [
-        {
-          number: '15-417',
-          name: 'HOT Compilation',
-        },
-        {
-          number: '15-411',
-          name: 'Compiler Design',
+          number: '15-122',
+          name: 'Principles of Imperative Computation',
           favorite: true,
         },
         {
-          number: '15-311',
-          name: 'Logic and Mechanized Reasoning',
+          number: '15-151',
+          name: 'Mathematical Foundations for Computer Science',
         },
         {
-          number: '15-210',
-          name: 'Parallel and Sequential Data Structures and Algorithms',
+          number: '21-241',
+          name: 'Mathematical Foundations for Computer Science',
         },
         {
-          number: '36-226',
-          name: 'Introduction to Statistical Inference',
+          number: '88-230',
+          name: 'Human Intelligence and Human Stupidity',
+        },
+        {
+          number: '79-189',
+          name: 'Democracy and History: Thinking Beyond the Self',
+        },
+        {
+          number: '07-128',
+          name: 'First Year Immigration Course',
         },
       ]
-    }
+    },
   ]
 
   const [refCourses, inViewCourses] = useInView({
@@ -163,6 +163,14 @@ const CourseSection = ({ ...props }) => {
         >
           courses
         </motion.div>
+        <ContentCard
+          sx={{
+
+          }}
+        >
+          A list of courses I have taken at Carnegie Mellon University, separated by semester.
+          A <AiFillStar sx={{ color: 'gold', verticalAlign: 'middle', }} /> denotes that I particularly enjoyed the course.
+        </ContentCard>
         {courses.map((semester) => (
           <>
             <ContentCard>
@@ -180,11 +188,9 @@ const CourseSection = ({ ...props }) => {
                   <li
                     sx={{
                       mb: 1,
-                      display: 'flex',
-                      alignItems: 'center',
                     }}
                   >
-                    {course.number}: {course.name} {course.favorite && <AiFillStar sx={{color: 'gold', ml: 2}} />}
+                    {course.number}: {course.name} {course.favorite && <AiFillStar sx={{color: 'gold', ml: 2, verticalAlign: 'middle'}} />}
                   </li>
                 ))}
               </ul>
