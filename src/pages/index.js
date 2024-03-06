@@ -2,6 +2,7 @@
 import * as React from 'react'
 import { useCallback } from 'react'
 import { graphql } from 'gatsby'
+import Headroom from 'react-headroom'
 import { jsx, Flex, Box, Paragraph, Grid, IconButton } from 'theme-ui'
 import { Themed } from '@theme-ui/mdx'
 import { motion } from 'framer-motion'
@@ -391,70 +392,72 @@ const IndexPage = ({ data }) => {
           }
         `}
       />
-      <motion.div
-        sx={{
-          borderBottom: '1px solid',
-          borderColor: '#9B9595',
-          position: 'fixed',
-          width: '100%',
-          background: 'background',
-          zIndex: 100,
-        }}
-
-        initial='initial'
-        animate='animate'
-        variants={headerAnimation()}
-      >
-        <Flex
+      <Headroom>
+        <motion.div
           sx={{
+            borderBottom: '1px solid',
+            borderColor: '#9B9595',
+            // position: 'fixed',
             width: '100%',
-            justifyContent: ['center', null, 'end'],
-            pr: [0, null, 5],
-            my: 3,
+            background: 'background',
+            zIndex: 100,
           }}
+
+          initial='initial'
+          animate='animate'
+          variants={headerAnimation()}
         >
-          <HeaderLink>
-            <Box
-              onClick={scrollAbout}
-              sx={{
-                cursor: 'pointer',
-              }}
-            >
-              ABOUT
-            </Box>
-          </HeaderLink>
-          <HeaderLink>
-            <Box
-              onClick={scrollCourses}
-              sx={{
-                cursor: 'pointer',
-              }}
-            >
-              COURSES
-            </Box>
-          </HeaderLink>
-          <HeaderLink>
-            <Box
-              onClick={scrollProjects}
-              sx={{
-                cursor: 'pointer',
-              }}
-            >
-              PROJECTS
-            </Box>
-          </HeaderLink>
-          <HeaderLink>
-            <Box
-              onClick={scrollContact}
-              sx={{
-                cursor: 'pointer',
-              }}
-            >
-              CONTACT
-            </Box>
-          </HeaderLink>
-        </Flex>
-      </motion.div>
+          <Flex
+            sx={{
+              width: '100%',
+              justifyContent: ['center', null, 'end'],
+              pr: [0, null, 5],
+              py: 3,
+            }}
+          >
+            <HeaderLink>
+              <Box
+                onClick={scrollAbout}
+                sx={{
+                  cursor: 'pointer',
+                }}
+              >
+                ABOUT
+              </Box>
+            </HeaderLink>
+            <HeaderLink>
+              <Box
+                onClick={scrollCourses}
+                sx={{
+                  cursor: 'pointer',
+                }}
+              >
+                COURSES
+              </Box>
+            </HeaderLink>
+            <HeaderLink>
+              <Box
+                onClick={scrollProjects}
+                sx={{
+                  cursor: 'pointer',
+                }}
+              >
+                PROJECTS
+              </Box>
+            </HeaderLink>
+            <HeaderLink>
+              <Box
+                onClick={scrollContact}
+                sx={{
+                  cursor: 'pointer',
+                }}
+              >
+                CONTACT
+              </Box>
+            </HeaderLink>
+          </Flex>
+        </motion.div>
+      </Headroom>
       <Flex
         sx={{
           minHeight: '100vh',
