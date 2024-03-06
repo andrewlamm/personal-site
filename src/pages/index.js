@@ -7,7 +7,7 @@ import { Themed } from '@theme-ui/mdx'
 import { motion } from 'framer-motion'
 import { Global, css } from '@emotion/react'
 import { BiLinkExternal } from 'react-icons/bi'
-import { AiOutlineLink, AiFillGithub } from "react-icons/ai";
+import { AiOutlineLink, AiFillGithub, AiFillStar } from "react-icons/ai";
 import { scroller } from 'react-scroll'
 import { useInView } from 'react-intersection-observer'
 
@@ -51,6 +51,13 @@ const IndexPage = ({ data }) => {
     })
   }, [])
 
+  const scrollCourses = useCallback(() => {
+    scroller.scrollTo('courses', {
+      duration: 400,
+      smooth: 'easeInOut',
+    })
+  }, [])
+
   const scrollProjects = useCallback(() => {
     scroller.scrollTo('projects', {
       duration: 400,
@@ -64,6 +71,125 @@ const IndexPage = ({ data }) => {
       smooth: 'easeInOut',
     })
   }, [])
+
+  const courses = [
+    {
+      semester: 'fall 2022',
+      courses: [
+        {
+          number: '15-122',
+          name: 'Principles of Imperative Computation',
+          favorite: true,
+        },
+        {
+          number: '15-151',
+          name: 'Mathematical Foundations for Computer Science',
+        },
+        {
+          number: '21-241',
+          name: 'Mathematical Foundations for Computer Science',
+        },
+        {
+          number: '88-230',
+          name: 'Human Intelligence and Human Stupidity',
+        },
+        {
+          number: '79-189',
+          name: 'Democracy and History: Thinking Beyond the Self',
+        },
+        {
+          number: '07-128',
+          name: 'First Year Immigration Course',
+        },
+      ]
+    },
+    {
+      semester: 'spring 2023',
+      courses: [
+        {
+          number: '15-150',
+          name: 'Principles of Functional Programming',
+          favorite: true,
+        },
+        {
+          number: '15-251',
+          name: 'Great Ideas in Theoretical Computer Science',
+          favorite: true,
+        },
+        {
+          number: '15-281',
+          name: 'Artificial Intelligence: Representation and Problem Solving',
+        },
+        {
+          number: '21-266',
+          name: 'Vector Calculus for Computer Scientists',
+        },
+        {
+          number: '76-107',
+          name: 'Writing about Data',
+        },
+        {
+          number: '76-108',
+          name: 'Writing about Public Problems',
+        },
+      ]
+    },
+    {
+      semester: 'fall 2023',
+      courses: [
+        {
+          number: '15-317',
+          name: 'Constructive Logic',
+        },
+        {
+          number: '15-213',
+          name: 'Introduction to Computer Systems',
+        },
+        {
+          number: '36-225',
+          name: 'Introduction to Probability Theory',
+        },
+        {
+          number: '57-173',
+          name: 'Survey of Western Music History',
+        },
+        {
+          number: '57-188',
+          name: 'Repertoire and Listening for Musicians',
+        },
+        {
+          number: '98-317',
+          name: 'Student Taught Courses (StuCo): Hype for Types',
+        },
+      ]
+    },
+    {
+      semester: 'spring 2024',
+      courses: [
+        {
+          number: '15-417',
+          name: 'HOT Compilation',
+        },
+        {
+          number: '15-411',
+          name: 'Compiler Design',
+          favorite: true,
+        },
+        {
+          number: '15-311',
+          name: 'Logic and Mechanized Reasoning',
+        },
+        {
+          number: '15-210',
+          name: 'Parallel and Sequential Data Structures and Algorithms',
+        },
+        {
+          number: '36-226',
+          name: 'Introduction to Statistical Inference',
+        },
+      ]
+    }
+  ]
 
   const projects = [
     {
@@ -228,6 +354,10 @@ const IndexPage = ({ data }) => {
     triggerOnce: true
   })
 
+  const [refCourses, inViewCourses] = useInView({
+    triggerOnce: true
+  })
+
   const [refProjects, inViewProjects] = useInView({
     triggerOnce: true
   })
@@ -291,6 +421,16 @@ const IndexPage = ({ data }) => {
               }}
             >
               ABOUT
+            </Box>
+          </HeaderLink>
+          <HeaderLink>
+            <Box
+              onClick={scrollCourses}
+              sx={{
+                cursor: 'pointer',
+              }}
+            >
+              COURSES
             </Box>
           </HeaderLink>
           <HeaderLink>
@@ -451,12 +591,14 @@ const IndexPage = ({ data }) => {
             <ContentCard>
               Some of the classes that I have taken include (with the semester I took them in parentheses):
               <ul>
-                <li><OutsideLink href="https://www.math.cmu.edu/~jmackey/151_128/welcome.html">Mathematical Foundations in Computer Science</OutsideLink> (Fall 2022)</li>
                 <li><OutsideLink href="http://www.cs.cmu.edu/~15122-archive/f22/">Principles of Imperative Computation</OutsideLink> (Fall 2022)</li>
                 <li><OutsideLink href="http://www.cs.cmu.edu/~15150/">Principles of Functional Programming</OutsideLink> (Spring 2023)</li>
-                <li><OutsideLink href="https://www.cs.cmu.edu/~15281-s23/">Artificial Intelligence: Representation and Problem Solving</OutsideLink> (Spring 2023)</li>
                 <li><OutsideLink href="https://s23.cs251.com/">Great Ideas in Theoretical Computer Science</OutsideLink> (Spring 2023)</li>
+                <li><OutsideLink href="https://www.cs.cmu.edu/~213/">Introduction to Computer Systems</OutsideLink> (Fall 2023)</li>
+                <li><OutsideLink href="https://www.cs.cmu.edu/~15210/">Parallel and Sequential Data Structures and Algorithms</OutsideLink> (Spring 2024)</li>
+                <li><OutsideLink href="https://www.cs.cmu.edu/~janh/courses/411/24/">Compiler Design</OutsideLink> (Spring 2024)</li>
               </ul>
+              You can find a full list of my classes in the <span onClick={scrollCourses} sx={{ textDecoration: 'underline', cursor: 'pointer' }}>courses</span> section.
             </ContentCard>
             <ContentCard>
               I really enjoy helping people, and many of my projects are designed to help people with certain tasks. A couple summers ago, I helped pioneer a website that taught the basics of web development for a web development class at my high school. Additionally, during my senior year, I worked on a project that improved the school's course catalog to aid students in their course selection process. Also, I volunteered as a beginning Java teacher at my local Chinese school and taught introductory Java topics to middle school students every week for a year.
@@ -472,6 +614,65 @@ const IndexPage = ({ data }) => {
             >
               <Themed.a href="/resume.pdf" target="_blank" rel="noopener noreferrer">View my resume</Themed.a> <Themed.a href="/resume.pdf" sx={{display: 'flex', alignItems: 'center'}} target="_blank" rel="noopener noreferrer"><BiLinkExternal sx={{ml: 2}} /></Themed.a>
             </ContentCard> */}
+          </Flex>
+        </Flex>
+        <Flex
+          sx={{
+            minHeight: '100vh',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+          id="courses"
+        >
+          <Flex
+            sx={{
+              flexDirection: 'column',
+              width: ['100%', '80%', '50%'],
+            }}
+          >
+            <motion.div
+              sx={{
+                fontWeight: 'bold',
+                fontSize: 10,
+                mb: 1,
+              }}
+
+              ref={refCourses}
+
+              initial='initial'
+              animate={inViewCourses ? 'animate' : 'none'}
+              variants={fadeInUp()}
+            >
+              courses
+            </motion.div>
+            {courses.map((semester) => (
+              <>
+                <ContentCard>
+                  <Box
+                    sx={{
+                      fontWeight: '600',
+                      fontSize: [2, 4, null],
+                      mb: 3,
+                    }}
+                  >
+                    {semester.semester}
+                  </Box>
+                  <ul>
+                    {semester.courses.map((course) => (
+                      <li
+                        sx={{
+                          mb: 1,
+                          display: 'flex',
+                          alignItems: 'center',
+                        }}
+                      >
+                        {course.number}: {course.name} {course.favorite && <AiFillStar sx={{color: 'gold', ml: 2}} />}
+                      </li>
+                    ))}
+                  </ul>
+                </ContentCard>
+              </>
+            ))}
           </Flex>
         </Flex>
         <Flex
