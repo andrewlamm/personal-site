@@ -16,138 +16,132 @@ import ContactSection from '../components/contact'
 
 const IndexPage = ({ data }) => {
   return (
-    <motion.div
-      initial='initial'
-      animate='animate'
-      variants={indexAnimation()}
+    <Flex
+      sx={{
+        flexDirection: 'column',
+      }}
     >
+      <SEO />
+      <Global
+        styles={css`
+          html {
+            overflow-y: scroll;
+          }
+          ::-webkit-scrollbar {
+            background: black;
+            width: 5px;
+          }
+          ::-webkit-scrollbar-thumb {
+            background: gray;
+          }
+        `}
+      />
+      <Header />
       <Flex
         sx={{
-          flexDirection: 'column',
+          minHeight: '100vh',
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
       >
-        <SEO />
-        <Global
-          styles={css`
-            html {
-              overflow-y: scroll;
-            }
-            ::-webkit-scrollbar {
-              background: black;
-              width: 5px;
-            }
-            ::-webkit-scrollbar-thumb {
-              background: gray;
-            }
-          `}
-        />
-        <Header />
         <Flex
           sx={{
-            minHeight: '100vh',
+            width: ['100%', '90%', '80%'],
+            flexDirection: ['column', 'row', null],
             justifyContent: 'center',
             alignItems: 'center',
           }}
         >
-          <Flex
+          <motion.div
+            initial='initial'
+            animate='animate'
+            variants={barAnimation()}
             sx={{
-              width: ['100%', '90%', '80%'],
-              flexDirection: ['column', 'row', null],
-              justifyContent: 'center',
-              alignItems: 'center',
+              mr: [0, 3, null],
+              pr: [0, 4, null],
+              py: 5,
+              display: 'flex',
+              flexDirection: 'row',
+              borderRight: ['0px', '1px solid', null],
+              borderColor: '#9B9595',
+              width: ['100%', '50%', null],
+              justifyContent: ['center', 'right', null],
             }}
           >
-            <motion.div
-              initial='initial'
-              animate='animate'
-              variants={barAnimation()}
+            <Flex
               sx={{
-                mr: [0, 3, null],
-                pr: [0, 4, null],
-                py: 5,
-                display: 'flex',
-                flexDirection: 'row',
-                borderRight: ['0px', '1px solid', null],
-                borderColor: '#9B9595',
-                width: ['100%', '50%', null],
-                justifyContent: ['center', 'right', null],
+                flexDirection: 'column',
+                textAlign: 'right',
               }}
             >
+              <motion.div
+                sx={{
+                  fontSize: [6, 8, 11],
+                  fontWeight: 'bold',
+                }}
+
+                initial='initial'
+                animate='animate'
+                variants={wiperAnimation(0.5, 0.7)}
+              >
+                andrew lam
+              </motion.div>
               <Flex
                 sx={{
+                  mt: 4,
                   flexDirection: 'column',
-                  textAlign: 'right',
+                  fontSize: [4, 5, 7],
+                  fontWeight: 600,
                 }}
               >
                 <motion.div
-                  sx={{
-                    fontSize: [6, 8, 11],
-                    fontWeight: 'bold',
-                  }}
-
                   initial='initial'
                   animate='animate'
-                  variants={wiperAnimation(0.5, 0.7)}
+                  variants={wiperAnimation(0.5, 1.0)}
                 >
-                  andrew lam
+                  software engineer
                 </motion.div>
-                <Flex
-                  sx={{
-                    mt: 4,
-                    flexDirection: 'column',
-                    fontSize: [4, 5, 7],
-                    fontWeight: 600,
-                  }}
+                <motion.div
+                  initial='initial'
+                  animate='animate'
+                  variants={wiperAnimation(0.5, 1.1)}
                 >
-                  <motion.div
-                    initial='initial'
-                    animate='animate'
-                    variants={wiperAnimation(0.5, 1.0)}
-                  >
-                    software engineer
-                  </motion.div>
-                  <motion.div
-                    initial='initial'
-                    animate='animate'
-                    variants={wiperAnimation(0.5, 1.1)}
-                  >
-                    web developer
-                  </motion.div>
-                </Flex>
+                  web developer
+                </motion.div>
               </Flex>
-            </motion.div>
-            <motion.div
-              sx={{
-                px: [5, 0, null],
-                ml: [0, 3, null],
-                fontSize: [2, 2, 5],
-                width: ['100%', '50%', null],
-              }}
+            </Flex>
+          </motion.div>
+          <motion.div
+            sx={{
+              px: [5, 0, null],
+              ml: [0, 3, null],
+              fontSize: [2, 2, 5],
+              width: ['100%', '50%', null],
+            }}
 
-              initial='initial'
-              animate='animate'
-              variants={wiperLeftAnimation()}
-            >
-              Experienced programmer who loves just about anything and everything about computers.
-              Currently studying Computer Science at <Themed.b>Carnegie Mellon University</Themed.b>.
-            </motion.div>
-          </Flex>
+            initial='initial'
+            animate='animate'
+            variants={wiperLeftAnimation()}
+          >
+            Experienced programmer who loves just about anything and everything about computers.
+            Currently studying Computer Science at <Themed.b>Carnegie Mellon University</Themed.b>.
+          </motion.div>
         </Flex>
-        <motion.div
-          initial='initial'
-          animate='animate'
-          variants={showPageContent()}
-          sx={{
-            mx: [3, 0, null]
-          }}
-        >
-          <AboutSection />
-          <CourseSection />
-          <ProjectSection data={{ data }} />
-          <ContactSection />
-        </motion.div>
       </Flex>
-    </motion.div>
+      <motion.div
+        initial='initial'
+        animate='animate'
+        variants={showPageContent()}
+        sx={{
+          mx: [3, 0, null]
+        }}
+      >
+        <AboutSection />
+        <CourseSection />
+        <ProjectSection data={{ data }} />
+        <ContactSection />
+      </motion.div>
+    </Flex>
   )
 }
 

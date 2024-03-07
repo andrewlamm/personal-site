@@ -10,6 +10,8 @@ import Headroom from 'react-headroom'
 import { headerAnimation } from '../animation/animations'
 import HeaderLink from '../components/headerLink'
 
+import '../styles/headroom.css'
+
 const Header = ({ ...props }) => {
   const scrollAbout = useCallback(() => {
     scroller.scrollTo('about', {
@@ -40,12 +42,12 @@ const Header = ({ ...props }) => {
   }, [])
 
   return (
-    <Headroom>
+    // <Headroom>
       <motion.div
         sx={{
           borderBottom: '1px solid',
           borderColor: '#9B9595',
-          // position: 'fixed',
+          position: 'fixed',
           width: '100%',
           background: 'background',
           zIndex: 100,
@@ -105,7 +107,7 @@ const Header = ({ ...props }) => {
           </HeaderLink>
         </Flex>
       </motion.div>
-    </Headroom>
+    // </Headroom>
   )
 }
 
