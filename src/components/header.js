@@ -10,8 +10,6 @@ import Headroom from 'react-headroom'
 import { headerAnimation } from '../animation/animations'
 import HeaderLink from '../components/headerLink'
 
-import '../styles/headroom.css'
-
 const Header = ({ ...props }) => {
   const scrollAbout = useCallback(() => {
     scroller.scrollTo('about', {
