@@ -1,18 +1,3 @@
-export const indexAnimation = () => ({
-  initial: {
-    height: '100vh',
-    overflow: 'hidden',
-  },
-  animate: {
-    height: 'auto',
-    overflow: 'auto',
-    transition: {
-      duration: 0,
-      delay: 2,
-    },
-  },
-})
-
 export const barAnimation = (duration) => ({
   initial: {
     transform: 'scaleY(0)',
