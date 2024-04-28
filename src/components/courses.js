@@ -15,8 +15,8 @@ const CourseSection = ({ ...props }) => {
       semester: 'spring 2024',
       courses: [
         {
-          number: '15-417',
-          name: 'HOT Compilation',
+          number: '15-210',
+          name: 'Parallel and Sequential Data Structures and Algorithms',
         },
         {
           number: '15-411',
@@ -24,12 +24,8 @@ const CourseSection = ({ ...props }) => {
           favorite: true,
         },
         {
-          number: '15-311',
-          name: 'Logic and Mechanized Reasoning',
-        },
-        {
-          number: '15-210',
-          name: 'Parallel and Sequential Data Structures and Algorithms',
+          number: '15-417',
+          name: 'HOT Compilation',
         },
         {
           number: '36-226',
@@ -41,12 +37,12 @@ const CourseSection = ({ ...props }) => {
       semester: 'fall 2023',
       courses: [
         {
-          number: '15-317',
-          name: 'Constructive Logic',
-        },
-        {
           number: '15-213',
           name: 'Introduction to Computer Systems',
+        },
+        {
+          number: '15-317',
+          name: 'Constructive Logic',
         },
         {
           number: '36-225',
@@ -110,20 +106,20 @@ const CourseSection = ({ ...props }) => {
           name: 'Mathematical Foundations for Computer Science',
         },
         {
-          number: '21-241',
-          name: 'Mathematical Foundations for Computer Science',
+          number: '07-128',
+          name: 'First Year Immigration Course',
         },
         {
-          number: '88-230',
-          name: 'Human Intelligence and Human Stupidity',
+          number: '21-241',
+          name: 'Mathematical Foundations for Computer Science',
         },
         {
           number: '79-189',
           name: 'Democracy and History: Thinking Beyond the Self',
         },
         {
-          number: '07-128',
-          name: 'First Year Immigration Course',
+          number: '88-230',
+          name: 'Human Intelligence and Human Stupidity',
         },
       ]
     },

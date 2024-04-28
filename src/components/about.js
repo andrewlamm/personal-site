@@ -53,9 +53,8 @@ const AboutSection = ({ ...props }) => {
           about me
         </motion.div>
         <ContentCard>
-          I'm Andrew Lam, a sophomore studying Computer Science at Carnegie Mellon University. My classes this semester include <OutsideLink href="https://www.cs.cmu.edu/~213/">Introduction to Computer Systems</OutsideLink> and <OutsideLink href="https://www.cs.cmu.edu/~crary/317-f23/">Constructive Logic</OutsideLink>.
-          Currently, I am currently a Teaching Assistant for <OutsideLink href="http://www.cs.cmu.edu/~15150/">15-150: Principles of Functional Programming</OutsideLink>. I was also a teaching assistant for <OutsideLink href="http://www.cs.cmu.edu/~15122-archive/s23/">15-122: Principles of Imperative Computation</OutsideLink> last semester as well.
-          The Computer Science topics that interest me the most currently are web development, programming languages, and computer systems. Outside of class, I enjoy gaming and relaxing.
+          I'm Andrew Lam, a sophomore studying Computer Science at Carnegie Mellon University. My classes this semester include <OutsideLink href="https://www.cs.cmu.edu/~janh/courses/411/24/index.html">Compiler Design</OutsideLink> and <OutsideLink href="https://www.cs.cmu.edu/~15210/">Parallel and Sequential Data Structures and Algorithms</OutsideLink>.
+          Currently, I am currently a Teaching Assistant for <OutsideLink href="http://www.cs.cmu.edu/~15150/">15-150: Principles of Functional Programming</OutsideLink>. I was also a teaching assistant for <OutsideLink href="http://www.cs.cmu.edu/~15122-archive/s23/">15-122: Principles of Imperative Computation</OutsideLink> a year ago as well.
         </ContentCard>
         <ContentCard>
           Some of the classes that I have taken include (with the semester I took them in parentheses):
