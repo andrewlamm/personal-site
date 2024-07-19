@@ -53,9 +53,13 @@ const AboutSection = ({ ...props }) => {
           about me
         </motion.div>
         <ContentCard>
-          I'm Andrew Lam, a sophomore studying Computer Science at Carnegie Mellon University. My classes this semester include <OutsideLink href="https://www.cs.cmu.edu/~janh/courses/411/24/index.html">Compiler Design</OutsideLink> and <OutsideLink href="https://www.cs.cmu.edu/~15210/">Parallel and Sequential Data Structures and Algorithms</OutsideLink>.
-          Currently, I am currently a Teaching Assistant for <OutsideLink href="http://www.cs.cmu.edu/~15150/">15-150: Principles of Functional Programming</OutsideLink>. I was also a teaching assistant for <OutsideLink href="http://www.cs.cmu.edu/~15122-archive/s23/">15-122: Principles of Imperative Computation</OutsideLink> a year ago as well.
+          I'm Andrew Lam, a rising junior studying Computer Science at Carnegie Mellon University. Currently, I am working as a software engineer intern for <OutsideLink href="https://academy.cs.cmu.edu/">CS Academy</OutsideLink>.
+          During the school semesters, I am a Teaching Assistant for <OutsideLink href="http://www.cs.cmu.edu/~15150/">15-150: Principles of Functional Programming</OutsideLink>. I was also a teaching assistant for <OutsideLink href="http://www.cs.cmu.edu/~15122-archive/s23/">15-122: Principles of Imperative Computation</OutsideLink> during the Spring 2023 semester as well.
         </ContentCard>
+        {/* <ContentCard>
+          I'm Andrew Lam, a sophomore studying Computer Science at Carnegie Mellon University. My classes this semester include <OutsideLink href="https://www.cs.cmu.edu/~janh/courses/411/24/index.html">Compiler Design</OutsideLink> and <OutsideLink href="https://www.cs.cmu.edu/~15210/">Parallel and Sequential Data Structures and Algorithms</OutsideLink>.
+          Currently, I am a Teaching Assistant for <OutsideLink href="http://www.cs.cmu.edu/~15150/">15-150: Principles of Functional Programming</OutsideLink>. I was also a teaching assistant for <OutsideLink href="http://www.cs.cmu.edu/~15122-archive/s23/">15-122: Principles of Imperative Computation</OutsideLink> during the Spring 2023 semester as well.
+        </ContentCard> */}
         <ContentCard>
           Some of the classes that I have taken include (with the semester I took them in parentheses):
           <ul>
@@ -68,20 +72,12 @@ const AboutSection = ({ ...props }) => {
           </ul>
           You can find a full list of my classes in the <span onClick={scrollCourses} sx={{ textDecoration: 'underline', cursor: 'pointer' }}>courses</span> section.
         </ContentCard>
-        <ContentCard>
+        {/* <ContentCard>
           I really enjoy helping people, and many of my projects are designed to help people with certain tasks. A couple summers ago, I helped pioneer a website that taught the basics of web development for a web development class at my high school. Additionally, during my senior year, I worked on a project that improved the school's course catalog to aid students in their course selection process. Also, I volunteered as a beginning Java teacher at my local Chinese school and taught introductory Java topics to middle school students every week for a year.
-        </ContentCard>
+        </ContentCard> */}
         <ContentCard>
           I graduated from Thomas Jefferson High School for Science and Technology in 2022 with a 4.51 GPA. In high school, I took many advanced courses including Multivariable Calculus, Linear Algebra, AP Computer Science with Data Structures, Artificial Intelligence, Machine Learning, Advanced Math Techniques, and AP Physics C. During my senior year, I was the statisician for my school's <OutsideLink href="https://tjcsec.club/">Computer Security Club</OutsideLink> and helped host <OutsideLink href="https://tjctf.org/">TJCTF</OutsideLink>, a CTF consisting of over 1100 players and over 300 teams. Additionally, I marched trumpet for my school's marching band for all four years and volunteered to be a quartermaster for three.
         </ContentCard>
-        {/* <ContentCard
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-          }}
-        >
-          <Themed.a href="/resume.pdf" target="_blank" rel="noopener noreferrer">View my resume</Themed.a> <Themed.a href="/resume.pdf" sx={{display: 'flex', alignItems: 'center'}} target="_blank" rel="noopener noreferrer"><BiLinkExternal sx={{ml: 2}} /></Themed.a>
-        </ContentCard> */}
       </Flex>
     </Flex>
   )

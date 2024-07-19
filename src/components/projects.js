@@ -38,7 +38,7 @@ const ProjectSection = ({ data, ...props }) => {
       Data from the CS:GO players are scraped from HLTV using JavaScript and the puzzles are generated using a python script and are stored on a MongoDB database. \
       The site is built with Express and EJS and is stored on Render.',
       link: 'https://csgodoku.onrender.com/',
-      github: 'https://github.com/superandybean/csgodoku',
+      github: 'https://github.com/andrewlamm/csgodoku',
     },
     {
       name: 'Learning the Express Way',
@@ -48,7 +48,7 @@ const ProjectSection = ({ data, ...props }) => {
       It was built as a tool to help students in TJHSST\'s Web Application Development class. The website was created in the Summer of 2022 and is built with Gatsby. \
       The lessons are written in Markdown and are converted to HTML using Gatsby\'s MDX plugin, allowing other users and students to easily create and add their own lessons onto the site.',
       link: 'https://lew.sites.tjhsst.edu/',
-      github: 'https://github.com/superandybean/learning-the-express-way',
+      github: 'https://github.com/andrewlamm/learning-the-express-way',
     },
     {
       name: 'CS:GO Predictions Game',
@@ -59,7 +59,7 @@ const ProjectSection = ({ data, ...props }) => {
       Users can log in using their Steam account on the website through the Steam OpenID library. Users can also compare their picks with other users through the leaderboard feature. Custom leaderboards are also a upcoming planned feature. \
       The site was built with Express and EJS with user data being stored in a MongoDB database. ',
       note: 'The site was originally hosted on Render, but is currently down to host my other project, CSGODOKU.',
-      github: 'https://github.com/superandybean/predictions-game-v2',
+      github: 'https://github.com/andrewlamm/predictions-game-v2',
     },
     // {
     //   name: 'Dota Predictions Game',
@@ -69,7 +69,7 @@ const ProjectSection = ({ data, ...props }) => {
     //   A more confident correct pick earns more points than a less confident correct pick, but a confident incorrect pick loses more points than a less confident one! The site was built with Express and Handlebars, with data being stored in a MongoDB database. \
     //   The site originally was built for predicting Dota matches but also supports predictions on CS:GO games.',
     //   note: 'The site was originally hosted on Heroku, but is currently down due to the end of the Dota 2 season.',
-    //   github: 'https://github.com/superandybean/predictions-game',
+    //   github: 'https://github.com/andrewlamm/predictions-game',
     // },
     {
       name: 'RateMyTJ',
@@ -79,7 +79,7 @@ const ProjectSection = ({ data, ...props }) => {
       It is aimed at helping students make more informed decisions when choosing classes and also aims at fixing many of the issues found on the current TJHSST course catalog. The site was built with Express and Handlebars with data being stored in a mySQL database. \
       The site is hosted on TJHSST director and supports login with Ion authentication through OAuth.',
       link: 'https://ratemytj.sites.tjhsst.edu/',
-      github: 'https://github.com/superandybean/RateMyTJ',
+      github: 'https://github.com/andrewlamm/RateMyTJ',
     },
     {
       name: 'DPC Simulator',
@@ -88,7 +88,7 @@ const ProjectSection = ({ data, ...props }) => {
       desc: 'The DPC Simulator allows users to try different scenario and \'what if\' situations in the Dota Pro Circuit. Users can simulate the DPC season by picking their winners and losers and view how each match affects the chances of each team from making the major or getting eliminated. \
       The site was built with pure Javascript and uses the OpenDota API to get data on the teams and matches. The site is hosted on Netlify.',
       link: 'https://dpc-simulator.netlify.app/',
-      github: 'https://github.com/superandybean/dpc-simulator',
+      github: 'https://github.com/andrewlamm/dpc-simulator',
     },
     {
       name: 'TJCTF',
@@ -124,7 +124,7 @@ const ProjectSection = ({ data, ...props }) => {
       img: bazaarImg,
       desc: 'A web application that uses the Hypixel API to track prices of items in the Skyblock Bazaar. The site was built with Javascript and uses Chartjs to display prices over time.',
       link: 'https://bazaar-tracker.netlify.app/',
-      github: 'https://github.com/superandybean/Bazaar-Tracker',
+      github: 'https://github.com/andrewlamm/Bazaar-Tracker',
     },
     {
       name: 'Formula 1 Simulator',
@@ -132,7 +132,7 @@ const ProjectSection = ({ data, ...props }) => {
       img: f1simImg,
       desc: 'App built using Javascript that allows users to alter and add race results to see how F1 standings would change. It features drag and drop capabilities to aid users in changing race results. ',
       link: 'https://f1-simulator.netlify.app/',
-      github: 'https://github.com/superandybean/f1-simulator',
+      github: 'https://github.com/andrewlamm/f1-simulator',
     },
     {
       name: 'goosechase',
@@ -140,7 +140,7 @@ const ProjectSection = ({ data, ...props }) => {
       img: goosechaseImg,
       desc: 'Inspired by Wikiraces, goosechase is a game built using Express and EJS that allows users to compete against their friends with the goal of trying to find a certain CMU page first, sort of like a wild goosechase. \
       The game was built for HackCMU 2022 and unfortunately not all of the planned features were able to be implemented in the hackathon timeframe. The game uses SocketIO to allow for multiplayer functionality.',
-      github: 'https://github.com/superandybean/goosechase',
+      github: 'https://github.com/andrewlamm/goosechase',
     },
     {
       name: 'Crossword Generator',
@@ -150,7 +150,7 @@ const ProjectSection = ({ data, ...props }) => {
       To display the GUI, tkinter was used. To generate the crossword, the python program used constraint satisfaction to generate crossword puzzles efficiently.',
       note: 'Unfortunately, the code is not publicly available. However, you can contact me if you want more information.',
       // note: 'Unfortunately, due to Honor Code violations, code for crossword generation is not public. However, the code for the GUI is available and found in the link below. Instructions for running the program with your own crossword generator are also provided in the link below.',
-      // github: 'https://github.com/superandybean/personal-site/tree/master/static/program_code',
+      github: 'https://github.com/andrewlamm/personal-site/tree/master/static/program_code',
     },
     // {
     //   name: 'College Management System',
@@ -158,7 +158,7 @@ const ProjectSection = ({ data, ...props }) => {
     //   img: cumsImg,
     //   desc: 'The College & University Management System is a web application that was built for HackTJ 9.0. The site allows users to easily manage their college applications-from a calendar of deadlines to an easy way to keep track of all of their essays. \
     //   The site was built with Express and Handlebars and uses the Department of Education\'s API to obtain college information including average cost and SAT score. Unfortunately, not all of the planned features were implemented.',
-    //   github: 'https://github.com/superandybean/college-university-managment-system',
+    //   github: 'https://github.com/andrewlamm/college-university-managment-system',
     // },
     {
       name: 'Sudoku Solver',
@@ -168,14 +168,14 @@ const ProjectSection = ({ data, ...props }) => {
       The GUI was built with tkinter in Python and the solver used Python with constraint satisfaction and forward looking to efficiently solve sudoku puzzles. The program was built as a helpful addon for students for the Sudoku solving assingment in my Artificial Intelligence class.',
       note: 'Unfortunately, the code is not publicly available. However, you can contact me if you want more information.',
       // note: 'Unfortunately, due to Honor Code violations, code for sudoku solving is not public. However, the code for the GUI is available and found in the link below. Instructions for running the program with your own sudoku solver are also provided in the link below.',
-      // github: 'https://github.com/superandybean/personal-site/tree/master/static/program_code',
+      github: 'https://github.com/andrewlamm/personal-site/tree/master/static/program_code',
     },
     {
       name: 'Tetris',
       fullname: 'Tetris',
       img: tetrisImg,
       desc: 'Tetris was a Java application that I buit in 2019. It is just a basic game of Tetris and allows users to customize their controls and add high scores.',
-      github: 'https://github.com/superandybean/tetris',
+      github: 'https://github.com/andrewlamm/tetris',
     },
     {
       name: 'focus',

@@ -4,7 +4,7 @@ my [personal site](https://andrewl.dev/)
 
 ### how to run
 
-1. `git clone git@github.com:superandybean/personal-site.git`
+1. `git clone git@github.com:andrewlamm/personal-site.git`
 2. `cd personal-site`
 3. `npm install`
 4. `gatsby develop`
