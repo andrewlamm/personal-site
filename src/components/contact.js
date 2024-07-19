@@ -48,7 +48,7 @@ const AboutSection = ({ ...props }) => {
         </ContentCard>
         <ContentCard>
           Some other external links are also provided below:
-          <ContactLink link="https://steamcommunity.com/id/andrewlamm">
+          <ContactLink link="https://steamcommunity.com/id/superandybean">
             Steam Profile
           </ContactLink>
           <ContactLink link="https://github.com/andrewlamm">
