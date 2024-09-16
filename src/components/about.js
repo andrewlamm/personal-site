@@ -52,14 +52,14 @@ const AboutSection = ({ ...props }) => {
         >
           about me
         </motion.div>
-        <ContentCard>
+        {/* <ContentCard>
           I'm Andrew Lam, a rising junior studying Computer Science at Carnegie Mellon University. Currently, I am working as a software engineer intern for <OutsideLink href="https://academy.cs.cmu.edu/">CS Academy</OutsideLink>.
           During the school semesters, I am a Teaching Assistant for <OutsideLink href="http://www.cs.cmu.edu/~15150/">15-150: Principles of Functional Programming</OutsideLink>. I was also a teaching assistant for <OutsideLink href="http://www.cs.cmu.edu/~15122-archive/s23/">15-122: Principles of Imperative Computation</OutsideLink> during the Spring 2023 semester as well.
-        </ContentCard>
-        {/* <ContentCard>
-          I'm Andrew Lam, a sophomore studying Computer Science at Carnegie Mellon University. My classes this semester include <OutsideLink href="https://www.cs.cmu.edu/~janh/courses/411/24/index.html">Compiler Design</OutsideLink> and <OutsideLink href="https://www.cs.cmu.edu/~15210/">Parallel and Sequential Data Structures and Algorithms</OutsideLink>.
-          Currently, I am a Teaching Assistant for <OutsideLink href="http://www.cs.cmu.edu/~15150/">15-150: Principles of Functional Programming</OutsideLink>. I was also a teaching assistant for <OutsideLink href="http://www.cs.cmu.edu/~15122-archive/s23/">15-122: Principles of Imperative Computation</OutsideLink> during the Spring 2023 semester as well.
         </ContentCard> */}
+        <ContentCard>
+          I'm Andrew Lam, a junior studying Computer Science at Carnegie Mellon University. My classes this semester include <OutsideLink href="https://www.cs.cmu.edu/~15451-f24/index.html">Algorithm Design and Analysis</OutsideLink> and <OutsideLink href="https://csd.cmu.edu/course/15312/f24">Foundations of Programming Languages</OutsideLink>.
+          Currently, I am a Teaching Assistant for <OutsideLink href="http://www.cs.cmu.edu/~15150/">15-150: Principles of Functional Programming</OutsideLink>. I was also a teaching assistant for <OutsideLink href="http://www.cs.cmu.edu/~15122-archive/s23/">15-122: Principles of Imperative Computation</OutsideLink> during the Spring 2023 semester as well. Last summer, I worked as a software engineer intern for <OutsideLink href="https://academy.cs.cmu.edu/">CMU CS Academy</OutsideLink>.
+        </ContentCard>
         <ContentCard>
           Some of the classes that I have taken include (with the semester I took them in parentheses):
           <ul>

@@ -12,6 +12,31 @@ import ContentCard from '../components/card'
 const CourseSection = ({ ...props }) => {
   const courses = [
     {
+      semester: 'fall 2024',
+      courses: [
+        {
+          number: '05-391',
+          name: 'Designing Human Centered Software',
+        },
+        {
+          number: '15-312',
+          name: 'Foundations of Programming Languages',
+        },
+        {
+          number: '15-316',
+          name: 'Software Foundations of Security and Privacy',
+        },
+        {
+          number: '15-451',
+          name: 'Algorithm Design and Analysis',
+        },
+        {
+          number: '76-270',
+          name: 'Writing for the Professions for SCS Students',
+        },
+      ]
+    },
+    {
       semester: 'spring 2024',
       courses: [
         {
