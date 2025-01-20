@@ -57,8 +57,8 @@ const AboutSection = ({ ...props }) => {
           During the school semesters, I am a Teaching Assistant for <OutsideLink href="http://www.cs.cmu.edu/~15150/">15-150: Principles of Functional Programming</OutsideLink>. I was also a teaching assistant for <OutsideLink href="http://www.cs.cmu.edu/~15122-archive/s23/">15-122: Principles of Imperative Computation</OutsideLink> during the Spring 2023 semester as well.
         </ContentCard> */}
         <ContentCard>
-          I'm Andrew Lam, a junior studying Computer Science at Carnegie Mellon University. My classes this semester include <OutsideLink href="https://www.cs.cmu.edu/~15451-f24/index.html">Algorithm Design and Analysis</OutsideLink> and <OutsideLink href="https://csd.cmu.edu/course/15312/f24">Foundations of Programming Languages</OutsideLink>.
-          Currently, I am a Teaching Assistant for <OutsideLink href="http://www.cs.cmu.edu/~15150/">15-150: Principles of Functional Programming</OutsideLink>. I was also a teaching assistant for <OutsideLink href="http://www.cs.cmu.edu/~15122-archive/s23/">15-122: Principles of Imperative Computation</OutsideLink> during the Spring 2023 semester as well. Last summer, I worked as a software engineer intern for <OutsideLink href="https://academy.cs.cmu.edu/">CMU CS Academy</OutsideLink>.
+          I'm Andrew Lam, a junior studying Computer Science at Carnegie Mellon University. My classes this semester include <OutsideLink href="https://www.cs.cmu.edu/~fp/courses/15417-s25/">HOT Compilation</OutsideLink> and <OutsideLink href="https://www.cs.cmu.edu/~mheule/15311-s25/index.html">Logic and Mechanized Reasoning</OutsideLink>.
+          Currently, I am a Head Teaching Assistant for <OutsideLink href="http://www.cs.cmu.edu/~15150/">15-150: Principles of Functional Programming</OutsideLink> and have been TAing this course for the past four semesters. I was also a teaching assistant for <OutsideLink href="http://www.cs.cmu.edu/~15122-archive/s23/">15-122: Principles of Imperative Computation</OutsideLink> during the Spring 2023 semester. Last summer, I worked as a software engineer intern for <OutsideLink href="https://academy.cs.cmu.edu/">CMU CS Academy</OutsideLink>.
         </ContentCard>
         <ContentCard>
           Some of the classes that I have taken include (with the semester I took them in parentheses):
@@ -69,6 +69,7 @@ const AboutSection = ({ ...props }) => {
             <li><OutsideLink href="https://www.cs.cmu.edu/~213/">Introduction to Computer Systems</OutsideLink> (Fall 2023)</li>
             <li><OutsideLink href="https://www.cs.cmu.edu/~15210/">Parallel and Sequential Data Structures and Algorithms</OutsideLink> (Spring 2024)</li>
             <li><OutsideLink href="https://www.cs.cmu.edu/~janh/courses/411/24/">Compiler Design</OutsideLink> (Spring 2024)</li>
+            <li><OutsideLink href="https://www.cs.cmu.edu/~15451-f24/index.html">Algorithm Design and Analysis</OutsideLink> (Fall 2024)</li>
           </ul>
           You can find a full list of my classes in the <span onClick={scrollCourses} sx={{ textDecoration: 'underline', cursor: 'pointer' }}>courses</span> section.
         </ContentCard>

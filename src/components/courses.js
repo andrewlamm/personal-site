@@ -12,6 +12,27 @@ import ContentCard from '../components/card'
 const CourseSection = ({ ...props }) => {
   const courses = [
     {
+      semester: 'spring 2025',
+      course: [
+        {
+          number: '15-311',
+          name: 'Logic and Mechanized Reasoning',
+        },
+        {
+          number: '15-817',
+          name: 'HOT Compilation (Frank\'s version)',
+        },
+        {
+          number: '18-095',
+          name: 'Getting Started in Electronics: An Experiential Approach',
+        },
+        {
+          number: '33-104',
+          name: 'Experimental Physics',
+        }
+      ]
+    },
+    {
       semester: 'fall 2024',
       courses: [
         {
@@ -50,7 +71,7 @@ const CourseSection = ({ ...props }) => {
         },
         {
           number: '15-417',
-          name: 'HOT Compilation',
+          name: 'HOT Compilation (Karl\'s version)',
         },
         {
           number: '36-226',
