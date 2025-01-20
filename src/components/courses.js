@@ -13,7 +13,7 @@ const CourseSection = ({ ...props }) => {
   const courses = [
     {
       semester: 'spring 2025',
-      course: [
+      courses: [
         {
           number: '15-311',
           name: 'Logic and Mechanized Reasoning',
@@ -29,7 +29,7 @@ const CourseSection = ({ ...props }) => {
         {
           number: '33-104',
           name: 'Experimental Physics',
-        }
+        },
       ]
     },
     {
