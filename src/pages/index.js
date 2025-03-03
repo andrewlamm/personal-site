@@ -157,7 +157,7 @@ export const query = graphql`
         )
       }
     }
-    bazaar: file(relativePath: { eq: "bazaar.png" }) {
+    hypixelBazaar: file(relativePath: { eq: "hypixel-bazaar.png" }) {
       childImageSharp {
         gatsbyImageData(
           width: 250
@@ -218,6 +218,26 @@ export const query = graphql`
       }
     }
     csgodoku: file(relativePath: { eq: "csgodoku.png" }) {
+      childImageSharp {
+        gatsbyImageData(
+          width: 250
+          height: 250
+          placeholder: BLURRED
+          formats: [AUTO, WEBP, AVIF]
+        )
+      }
+    }
+    prtAnimation: file(relativePath: { eq: "prt-animation.png" }) {
+      childImageSharp {
+        gatsbyImageData(
+          width: 250
+          height: 250
+          placeholder: BLURRED
+          formats: [AUTO, WEBP, AVIF]
+        )
+      }
+    }
+    bazaarBot: file(relativePath: { eq: "bazaar-game.png" }) {
       childImageSharp {
         gatsbyImageData(
           width: 250

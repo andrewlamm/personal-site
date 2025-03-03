@@ -3,7 +3,7 @@ import * as React from 'react'
 import { jsx, Flex, Box, Grid, Paragraph, IconButton } from 'theme-ui'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { AiOutlineLink, AiFillGithub } from "react-icons/ai"
+import { AiOutlineLink, AiFillGithub, AiFillRedditCircle } from "react-icons/ai"
 
 import { fadeInUp, staggerAnimation } from '../animation/animations'
 import ProjectCard from '../components/projectCard'
@@ -19,16 +19,37 @@ const ProjectSection = ({ data, ...props }) => {
     fresh: { childImageSharp: freshImg },
     f1sim: { childImageSharp: f1simImg },
     cums: { childImageSharp: cumsImg },
-    bazaar: { childImageSharp: bazaarImg },
+    hypixelBazaar: { childImageSharp: hypixelBazaarImg },
     goosechase: { childImageSharp: goosechaseImg },
     crossword: { childImageSharp: crosswordImg },
     sudoku: { childImageSharp: sudokuImg },
     tetris: { childImageSharp: tetrisImg },
     focus: { childImageSharp: focusImg },
     csgodoku: { childImageSharp: csgodokuImg },
+    prtAnimation: { childImageSharp: prtAnimationImg },
+    bazaarBot: { childImageSharp: bazaarBotImg },
   } = data.data
 
   const projects = [
+    {
+      name: 'Bazaar Reddit Bot',
+      fullname: 'Bazaar Reddit Bot',
+      img: bazaarBotImg,
+      desc: 'Reddit bot that responds to comments in the PlayTheBazaar subreddit about item and skill information. \
+      The bot uses HowBazaar to get item/skill information and uses PRAW to interact with Reddit. The user can \
+      trigger the bot using [[item]] or [[skill]] in their comments. The bot is hosted on a Google Cloud VM.',
+      reddit: 'https://www.reddit.com/user/bazaar-game-bot'
+    },
+    {
+      name: 'PRT Animation',
+      fullname: 'PRT Animation',
+      img: prtAnimationImg,
+      desc: 'Animation of the Pittsburgh Regional Transit (PRT) bus routes. \
+      GTFS data from PRT is used for route timing and the animation is built with pygame. \
+      Features include customizing the time range and map for the animation and also allows \
+      the user to use their own GTFS data for the animation.',
+      github: 'https://github.com/andrewlamm/prt-animation'
+    },
     {
       name: 'CSGODOKU',
       fullname: 'CSGODOKU',
@@ -119,9 +140,9 @@ const ProjectSection = ({ data, ...props }) => {
       github: 'https://github.com/AutinMitra/fresh-frontend',
     },
     {
-      name: 'Bazaar Tracker',
-      fullname: 'Bazaar Tracker',
-      img: bazaarImg,
+      name: 'Hypixel Bazaar Tracker',
+      fullname: 'Hypixel Bazaar Tracker',
+      img: hypixelBazaarImg,
       desc: 'A web application that uses the Hypixel API to track prices of items in the Skyblock Bazaar. The site was built with Javascript and uses Chartjs to display prices over time.',
       link: 'https://bazaar-tracker.netlify.app/',
       github: 'https://github.com/andrewlamm/Bazaar-Tracker',
@@ -134,14 +155,14 @@ const ProjectSection = ({ data, ...props }) => {
       link: 'https://f1-simulator.netlify.app/',
       github: 'https://github.com/andrewlamm/f1-simulator',
     },
-    {
-      name: 'goosechase',
-      fullname: 'goosechase',
-      img: goosechaseImg,
-      desc: 'Inspired by Wikiraces, goosechase is a game built using Express and EJS that allows users to compete against their friends with the goal of trying to find a certain CMU page first, sort of like a wild goosechase. \
-      The game was built for HackCMU 2022 and unfortunately not all of the planned features were able to be implemented in the hackathon timeframe. The game uses SocketIO to allow for multiplayer functionality.',
-      github: 'https://github.com/andrewlamm/goosechase',
-    },
+    // {
+    //   name: 'goosechase',
+    //   fullname: 'goosechase',
+    //   img: goosechaseImg,
+    //   desc: 'Inspired by Wikiraces, goosechase is a game built using Express and EJS that allows users to compete against their friends with the goal of trying to find a certain CMU page first, sort of like a wild goosechase. \
+    //   The game was built for HackCMU 2022 and unfortunately not all of the planned features were able to be implemented in the hackathon timeframe. The game uses SocketIO to allow for multiplayer functionality.',
+    //   github: 'https://github.com/andrewlamm/goosechase',
+    // },
     {
       name: 'Crossword Generator',
       fullname: 'Crossword Generator',
@@ -170,13 +191,13 @@ const ProjectSection = ({ data, ...props }) => {
       // note: 'Unfortunately, due to Honor Code violations, code for sudoku solving is not public. However, the code for the GUI is available and found in the link below. Instructions for running the program with your own sudoku solver are also provided in the link below.',
       github: 'https://github.com/andrewlamm/personal-site/tree/master/static/program_code',
     },
-    {
-      name: 'Tetris',
-      fullname: 'Tetris',
-      img: tetrisImg,
-      desc: 'Tetris was a Java application that I buit in 2019. It is just a basic game of Tetris and allows users to customize their controls and add high scores.',
-      github: 'https://github.com/andrewlamm/tetris',
-    },
+    // {
+    //   name: 'Tetris',
+    //   fullname: 'Tetris',
+    //   img: tetrisImg,
+    //   desc: 'Tetris was a Java application that I buit in 2019. It is just a basic game of Tetris and allows users to customize their controls and add high scores.',
+    //   github: 'https://github.com/andrewlamm/tetris',
+    // },
     {
       name: 'focus',
       fullname: 'focus',
@@ -331,7 +352,7 @@ const ProjectSection = ({ data, ...props }) => {
                   >
                     <b>Note: </b>{project.note}
                   </Paragraph>}
-                  {(project.link || project.github) &&
+                  {(project.link || project.github || project.reddit) &&
                   <Grid
                     columns={2}
                     gap={0}
@@ -359,6 +380,15 @@ const ProjectSection = ({ data, ...props }) => {
                       rel='nofollow noopener noreferrer'
                     >
                       <AiFillGithub size={24} title={'Github Repository'} />
+                    </IconButton>}
+                    {project.reddit &&
+                    <IconButton
+                      as='a'
+                      href={project.reddit}
+                      target='_blank'
+                      rel='nofollow noopener noreferrer'
+                    >
+                      <AiFillRedditCircle size={24} title={'Reddit Link'} />
                     </IconButton>}
                   </Grid>}
                 </Flex>
