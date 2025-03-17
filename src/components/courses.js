@@ -157,7 +157,7 @@ const CourseSection = ({ ...props }) => {
         },
         {
           number: '21-241',
-          name: 'Mathematical Foundations for Computer Science',
+          name: 'Matrices and Linear Transformations',
         },
         {
           number: '79-189',
