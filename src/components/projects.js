@@ -51,14 +51,14 @@ const ProjectSection = ({ data, ...props }) => {
       github: 'https://github.com/andrewlamm/prt-animation'
     },
     {
-      name: 'CSGODOKU',
-      fullname: 'CSGODOKU',
+      name: 'CSDOKU',
+      fullname: 'CSDOKU',
       img: csgodokuImg,
-      desc: 'An immaculate grid game for CS:GO. Immaculate Grid is a game featuring a 3x3 board with a clue corresponding to each row and column. \
+      desc: 'An immaculate grid game for Counterstrike. Immaculate Grid is a game featuring a 3x3 board with a clue corresponding to each row and column. \
       The user\'s goal is to select a player in each grid spot such that the clue for each row and column in that grid spot is satisfied without repeating any players. \
-      Data from the CS:GO players are scraped from HLTV using JavaScript and the puzzles are generated using a python script and are stored on a MongoDB database. \
-      The site is built with Express and EJS and is stored on Render.',
-      link: 'https://csgodoku.onrender.com/',
+      Data from the CS players are scraped from HLTV using JavaScript and the puzzles are generated using a python script and are stored on a MongoDB database. \
+      The site is built with Express and EJS and is hosted on a DigitalOcean droplet.',
+      link: 'https://www.csdoku.com/',
       github: 'https://github.com/andrewlamm/csgodoku',
     },
     {
@@ -79,7 +79,6 @@ const ProjectSection = ({ data, ...props }) => {
       A more confident correct pick earns more points than a less confident correct pick, but a confident incorrect pick loses more points than a less confident one! \
       Users can log in using their Steam account on the website through the Steam OpenID library. Users can also compare their picks with other users through the leaderboard feature. Custom leaderboards are also a upcoming planned feature. \
       The site was built with Express and EJS with user data being stored in a MongoDB database. ',
-      note: 'The site was originally hosted on Render, but is currently down to host my other project, CSGODOKU.',
       github: 'https://github.com/andrewlamm/predictions-game-v2',
     },
     // {

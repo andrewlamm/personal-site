@@ -52,13 +52,9 @@ const AboutSection = ({ ...props }) => {
         >
           about me
         </motion.div>
-        {/* <ContentCard>
-          I'm Andrew Lam, a rising junior studying Computer Science at Carnegie Mellon University. Currently, I am working as a software engineer intern for <OutsideLink href="https://academy.cs.cmu.edu/">CS Academy</OutsideLink>.
-          During the school semesters, I am a Teaching Assistant for <OutsideLink href="http://www.cs.cmu.edu/~15150/">15-150: Principles of Functional Programming</OutsideLink>. I was also a teaching assistant for <OutsideLink href="http://www.cs.cmu.edu/~15122-archive/s23/">15-122: Principles of Imperative Computation</OutsideLink> during the Spring 2023 semester as well.
-        </ContentCard> */}
         <ContentCard>
-          I'm Andrew Lam, a junior studying Computer Science at Carnegie Mellon University. My classes this semester include <OutsideLink href="https://www.cs.cmu.edu/~fp/courses/15417-s25/">HOT Compilation</OutsideLink> and <OutsideLink href="https://www.cs.cmu.edu/~mheule/15311-s25/index.html">Logic and Mechanized Reasoning</OutsideLink>.
-          Currently, I am a Head Teaching Assistant for <OutsideLink href="http://www.cs.cmu.edu/~15150/">15-150: Principles of Functional Programming</OutsideLink> and have been TAing this course for the past four semesters. I was also a teaching assistant for <OutsideLink href="http://www.cs.cmu.edu/~15122-archive/s23/">15-122: Principles of Imperative Computation</OutsideLink> during the Spring 2023 semester. Last summer, I worked as a software engineer intern for <OutsideLink href="https://academy.cs.cmu.edu/">CMU CS Academy</OutsideLink>.
+          I'm Andrew Lam, a software engineer working in New York City. I graduated from Carnegie Mellon University with a degree in Computer Science in August of 2025.
+          At CMU, I was a Head Teaching Assistant for <OutsideLink href="http://www.cs.cmu.edu/~15150/">15-150: Principles of Functional Programming</OutsideLink> during the Spring 2025 semester and was a TA for the course for four semesters in total. I was also a TA for <OutsideLink href="http://www.cs.cmu.edu/~15122-archive/s23/">15-122: Principles of Imperative Computation</OutsideLink> during the Spring 2023 semester. Last summer I worked as a software engineer intern at a financial firm in New York City, and in the previous summer I worked as a software engineer intern for <OutsideLink href="https://academy.cs.cmu.edu/">CMU CS Academy</OutsideLink>.
         </ContentCard>
         <ContentCard>
           Some of the classes that I have taken include (with the semester I took them in parentheses):

@@ -95,7 +95,7 @@ const SplashScreen = ({ ...props }) => {
           variants={wiperLeftAnimation()}
         >
           Experienced programmer who loves just about anything and everything about computers.
-          Currently studying Computer Science at <Themed.b>Carnegie Mellon University</Themed.b>.
+          Currently working as a Software Engineer in <Themed.b>New York City</Themed.b>.
         </motion.div>
       </Flex>
     </Flex>
