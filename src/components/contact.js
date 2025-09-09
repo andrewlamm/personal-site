@@ -44,7 +44,7 @@ const AboutSection = ({ ...props }) => {
           contact
         </motion.div>
         <ContentCard>
-          You can contact me at <code>andrew.lam</code> on Discord or <code>andrewlamm04@gmail.com</code> through email.
+          You can contact me at <code>andrewlamm04@gmail.com</code> through email.
         </ContentCard>
         <ContentCard>
           Some other external links are also provided below:
