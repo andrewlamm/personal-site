@@ -57,9 +57,6 @@ const AboutSection = ({ ...props }) => {
           <ContactLink link="https://www.youtube.com/channel/UCJtjhUA1jVhxJXDgzTT6AxA">
             Youtube
           </ContactLink>
-          <ContactLink link="https://www.linkedin.com/in/andrew-lam-65b2a7204/">
-            LinkedIn
-          </ContactLink>
         </ContentCard>
       </Flex>
     </Flex>
